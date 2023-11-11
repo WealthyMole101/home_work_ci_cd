@@ -62,7 +62,7 @@ else ()
         -Wall -Wextra -pedantic -Werror
     )
     target_compile_options(test_version PRIVATE
-        -Wall -Wextra -pedantic -Werror
+        -Wall -Wextra -pedantic -Werror -lpthread
     )
 endif()
 
