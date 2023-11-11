@@ -33,6 +33,7 @@ target_link_libraries(helloworld_cli PRIVATE
 target_link_libraries(test_version
     ${Boost_LIBRARIES}
     helloworld
+    pthread
 )
 
 target_include_directories(test_version_gtest
@@ -42,6 +43,7 @@ target_link_libraries(
     test_version_gtest
     ${GTEST_BOTH_LIBRARIES}
     helloworld
+    pthread
 )
 
 if (MSVC)
@@ -56,13 +58,13 @@ if (MSVC)
     )
 else ()
     target_compile_options(helloworld_cli PRIVATE
-        -Wall -Wextra -pedantic -Werror -lpthread
+        -Wall -Wextra -pedantic -Werror
     )
     target_compile_options(helloworld PRIVATE
-        -Wall -Wextra -pedantic -Werror -lpthread
+        -Wall -Wextra -pedantic -Werror
     )
     target_compile_options(test_version PRIVATE
-        -Wall -Wextra -pedantic -Werror -lpthread
+        -Wall -Wextra -pedantic -Werror
     )
 endif()
 
