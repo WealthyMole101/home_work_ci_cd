@@ -56,10 +56,10 @@ if (MSVC)
     )
 else ()
     target_compile_options(helloworld_cli PRIVATE
-        -Wall -Wextra -pedantic -Werror
+        -Wall -Wextra -pedantic -Werror -lpthread
     )
     target_compile_options(helloworld PRIVATE
-        -Wall -Wextra -pedantic -Werror
+        -Wall -Wextra -pedantic -Werror -lpthread
     )
     target_compile_options(test_version PRIVATE
         -Wall -Wextra -pedantic -Werror -lpthread
